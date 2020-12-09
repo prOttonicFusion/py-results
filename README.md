@@ -9,6 +9,12 @@ sudo pip3 install git+git://github.com/prottonicfusion/pyResults.git#egg=pyResul
 
 ## Development
 
+### Testing
+The provided unit tests can be run using [Pytest](https://docs.pytest.org):
+```
+python3 -m pytest 
+```
+
 ### Building
 To build the package and create the distribution package, run
 ```
