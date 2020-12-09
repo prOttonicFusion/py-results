@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="py-results",
+    name="py-results-prottonicfusion",
     version="0.0.1",
     author="prOttonicFusion",
     author_email="otto.lindblom@gmail.com",
