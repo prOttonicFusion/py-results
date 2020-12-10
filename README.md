@@ -7,6 +7,26 @@ The package can be installed from GitHub using Pip:
 sudo pip3 install git+git://github.com/prottonicfusion/pyResults.git#egg=pyResults
 ```
 
+## Usage
+```python
+from py_results import result
+
+def increment(a):
+    res = result.Result()
+    if type(a) == int or type(a) == float:
+        res.ok(a+1)
+    else:
+        res.err("Not a number!")
+    return res
+
+res = increment(sys.argv[1])
+
+if res.is_ok():
+    print("The incremented result is: ", res.unwrap())
+else:
+    print("Error: ", res.unwrap())
+```
+
 ## Development
 
 ### Testing
