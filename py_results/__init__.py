@@ -1,1 +1,1 @@
-import py_results
+import result
