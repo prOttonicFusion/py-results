@@ -1,1 +1,1 @@
-import result
+from . import result
