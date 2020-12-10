@@ -11,7 +11,7 @@ def test_createEmptyResult():
 def test_createSuccessResult():
     '''Result object with success status'''
     ok_result = result.Result()
-    ok_result.ok("Success!")
+    ok_result.ok('Success!')
     assert ok_result.is_ok() == True, 'is_ok() should return true'
     assert ok_result.is_err() == False, 'is_err() should return false'
 
@@ -19,7 +19,7 @@ def test_createSuccessResult():
 def test_createFailResult():
     '''Result object with fail status'''
     fail_result = result.Result()
-    fail_result.err("Epic fail!")
+    fail_result.err('Epic fail!')
     assert fail_result.is_ok() == False, 'is_ok() should return false'
     assert fail_result.is_err() == True, 'is_err() should return true'
 
@@ -27,8 +27,8 @@ def test_createFailResult():
 def test_overrideSuccessResult():
     '''Override success with fail result'''
     fail_result = result.Result()
-    fail_result.ok("Success!")
-    fail_result.err("Uh, no it was a fail...")
+    fail_result.ok('Success!')
+    fail_result.err('Uh, no it was a fail...')
     assert fail_result.is_ok() == False, 'is_ok() should return false'
     assert fail_result.is_err() == True, 'is_err() should return true'
 
@@ -36,7 +36,27 @@ def test_overrideSuccessResult():
 def test_overrideFailResult():
     '''Override fail with success result'''
     fail_result = result.Result()
-    fail_result.err("Fail :(")
-    fail_result.ok("No, a success!")
+    fail_result.err('Fail :(')
+    fail_result.ok('No, a success!')
     assert fail_result.is_ok() == True, 'is_ok() should return true'
     assert fail_result.is_err() == False, 'is_err() should return false'
+
+
+def test_unwrapEmptyResult():
+    '''Unwrap blank result object'''
+    blank_result = result.Result()
+    assert blank_result.unwrap() == None, 'should unwrap to None'
+
+
+def test_unwrapSuccessResult():
+    '''Unwrap result object with success status'''
+    ok_result = result.Result()
+    ok_result.ok(123)
+    assert ok_result.unwrap() == 123, 'should unwrap ok value'
+
+
+def test_unwrapFailResult():
+    '''Unwrap result object with fail status'''
+    fail_result = result.Result()
+    fail_result.err('Epic fail!')
+    assert fail_result.unwrap() == 'Epic fail!', 'should unwrap err message'

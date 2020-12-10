@@ -20,3 +20,10 @@ class Result():
 
     def is_err(self):
         return self.err_value is not None
+
+    def unwrap(self):
+        """Unwrap the contained data"""
+        if self.ok_value == None:
+            return self.err_value
+        else:
+            return self.ok_value 
