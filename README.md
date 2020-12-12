@@ -1,5 +1,5 @@
 # pyResults
-A result wrapper object for Python
+A result wrapper class for Python
 
 ## Installation
 The package can be installed from GitHub using Pip:
