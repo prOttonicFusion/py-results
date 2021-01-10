@@ -1,3 +1,12 @@
+"""
+A result wrapper class for Python
+"""
+
+__author__ = "prOttonicFusion"
+__version__ = "0.1.0"
+__license__ = "MIT"
+
+
 class Result():
     """Stores the result of an operation"""
 
