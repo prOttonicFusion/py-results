@@ -39,5 +39,5 @@ python3 -m pytest
 To build the package and create the distribution package, run
 ```
 python3 setup.py sdist
-``¨
+```
 from the projct root.
