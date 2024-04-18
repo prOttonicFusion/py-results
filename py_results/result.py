@@ -1,38 +1,29 @@
-"""
-A result wrapper class for Python
-"""
-
-__author__ = "prOttonicFusion"
-__version__ = "0.1.0"
-__license__ = "MIT"
-
-
-class Result():
-    """Stores the result of an operation"""
-
+class Result:
     def __init__(self):
         self.ok_value = None
-        self.err_value = None
-
-    def ok(self, ok_value):
-        """The result is a success, store the relevant return value"""
-        self.ok_value = ok_value
-        self.err_value = None
-
-    def err(self, err_value):
-        """The result is a fail, store the relevant return value"""
-        self.err_value = err_value
-        self.ok_value = None
+        self.err_message = None
 
     def is_ok(self):
         return self.ok_value is not None
 
     def is_err(self):
-        return self.err_value is not None
+        return self.err_message is not None
 
     def unwrap(self):
-        """Unwrap the contained data"""
-        if self.ok_value == None:
-            return self.err_value
+        """Unwrap the contained data, returning either the success value or the error message"""
+        if self.err_message != None:
+            return self.err_message
         else:
-            return self.ok_value 
+            return self.ok_value
+
+
+class Ok(Result):
+    def __init__(self, value):
+        super().__init__()
+        self.ok_value = value
+
+
+class Err(Result):
+    def __init__(self, message):
+        super().__init__()
+        self.err_message = message
