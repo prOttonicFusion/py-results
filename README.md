@@ -30,9 +30,9 @@ else:
 ## Development
 
 ### Testing
-The provided unit tests can be run using [Pytest](https://docs.pytest.org):
+The provided unit tests can be run using:
 ```
-python3 -m pytest 
+python3 -m unittest
 ```
 
 ### Building
