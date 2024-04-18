@@ -11,7 +11,7 @@ sudo pip3 install git+git://github.com/prottonicfusion/pyResults.git#egg=pyResul
 ```python
 from py_results import Result, Ok, Err
 
-def increment(a) -> Result:
+def increment(a) -> Result[int]:
     if type(a) == int or type(a) == float:
         return Ok(a+1)
     return Err("Not a number!")
