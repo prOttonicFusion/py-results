@@ -1,10 +1,13 @@
-# pyResults
+# py-results
 A result wrapper class for Python
 
 ## Installation
 The package can be installed from GitHub using Pip:
-```
-sudo pip3 install git+git://github.com/prottonicfusion/pyResults.git#egg=pyResults
+```sh
+pip install git+https://github.com/prottonicfusion/py-results.git
+
+# or for a specific version
+pip install git+https://github.com/prottonicfusion/py-results.git@v1.0.0
 ```
 
 ## Usage
